@@ -1,1 +1,16 @@
-/*# sourceMappingURL=theme.css.map */
+.story h2::after, .story__article::after {
+  animation: rotation 2s infinite linear;
+}
+
+.story h2::after {
+  transform-origin: 77px 77px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=theme.css.map */

@@ -1,0 +1,31 @@
+/*Rotation sunflower, hibiscus*/
+
+.story h2::after, .story__article::after, #studio h2::before {
+    animation: rotation 2s infinite linear;
+    //width: 155px;
+    //height: 154px;
+}
+
+/*axe sunflower*/
+.story h2::after {
+    //width: 155px;
+    //height: 154px;
+    transform-origin: 77px 77px;
+}
+
+#studio h2::before {
+    transform-origin: 102px 111px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.banner {
+    
+}
