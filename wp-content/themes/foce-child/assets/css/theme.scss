@@ -1,8 +1,22 @@
-/*Image banner*/
-.story #place {
-    background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+.banner-picture {
+    z-index: 0
 }
 
+.banner video {
+    
+    object-fit: inherit;
+    
+}
+
+@media (max-width: 1400px) {
+   .banner video {
+        display: none;
+   }
+}
+
+.banner-logo {
+    z-index: 2;
+}
 
 /*Rotation sunflower, hibiscus*/
 .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after {
@@ -10,12 +24,13 @@
 }
 
 /*axe sunflower*/
-.story h2::after {
-    transform-origin: 77px 77px;
-}
-
-#studio h2::before {
-    transform-origin: 102px 111px;
+.story {
+    &h2::after {
+        transform-origin: 77px 77px;
+    }
+    &h2::before {
+        transform-origin: 102px 111px;
+    }
 }
 
 @keyframes rotation {
@@ -27,8 +42,10 @@
     }
 }
 
-/*Fade in section L'histoire*/
-
+/*Image section Le lieu*/
+.story #place {
+    background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+}
 
 /* Section Nomination festival */
 .container-oscars {
@@ -57,7 +74,6 @@
     background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png");
     background-size: 700px 200px;
     //background-size: cover;
-
 }
 
 .container-oscars img {
@@ -66,7 +82,8 @@
     flex-shrink: 0;
 }
 
-.story, #studio, #colophon, .container-oscars {
+/*Fade in - opacity - top*/
+.story, #studio, #colophon, .banner img, .container-oscars, #story:not(.no-texte) {
     opacity: 1;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -85,3 +102,25 @@
         transform: translate(0px, 0px);
     }
 }
+
+/*Fade in - opacity - bottom*/
+//.banner {
+//   opacity: 1;
+//   animation-name: fadeInOpacityBottom;
+//   animation-iteration-count: 1;
+//   animation-timing-function: ease-in;
+//   animation-duration: 2s;
+//   animation: fadeInOpacity 1s linear forwards;
+//   //background-image: url("http://localhost/koukaki/wp-content/themes/foce/assets/images/banner.png")
+//
+
+//@keyframes fadeInOpacityBottom {
+//    0% {
+//        opacity: 0;
+//        transform: translate(0px, 0px);
+//    }
+//    100% {
+//        opacity: 1;
+//        transform: translate(0px, 300px);
+//    }
+//}

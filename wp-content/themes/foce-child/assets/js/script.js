@@ -1,3 +1,9 @@
+//let storyFadeIn = document.getElementById(".story");
+//storyFadeIn.classList.remove("p")
+//storyFadeIn.remove(p)
+
+
+
 //window.addEventListener('scroll',(event) => {
 //    console.log('Scrolling...');
 //});

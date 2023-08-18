@@ -1,6 +1,19 @@
-/*Image banner*/
-.story #place {
-  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+.banner-picture {
+  z-index: 0;
+}
+
+.banner video {
+  -o-object-fit: inherit;
+     object-fit: inherit;
+}
+
+@media (max-width: 1400px) {
+  .banner video {
+    display: none;
+  }
+}
+.banner-logo {
+  z-index: 2;
 }
 
 /*Rotation sunflower, hibiscus*/
@@ -9,11 +22,10 @@
 }
 
 /*axe sunflower*/
-.story h2::after {
+.storyh2::after {
   transform-origin: 77px 77px;
 }
-
-#studio h2::before {
+.storyh2::before {
   transform-origin: 102px 111px;
 }
 
@@ -25,12 +37,16 @@
     transform: rotate(360deg);
   }
 }
-/*Fade in section L'histoire*/
+/*Image section Le lieu*/
+.story #place {
+  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+}
+
 /* Section Nomination festival */
 .container-oscars {
   display: flex;
   flex-direction: row;
-  
+  align-items: center;
   width: 66.66%;
   margin: auto;
 }
@@ -44,15 +60,39 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.84px;
+  width: 643px;
+  height: 187px;
+}
+
+.container-oscars-background {
   background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png");
-  width: 674.18px;
-height: 196.045px; 
+  background-size: 700px 200px;
 }
 
 .container-oscars img {
-  display:inline-flex;
   width: 278px;
   height: 129px;
   flex-shrink: 0;
-  margin-top: 200px;
-}/*# sourceMappingURL=theme.css.map */
+}
+
+/*Fade in - opacity - top*/
+.story, #studio, #colophon, .banner img, .container-oscars, #story:not(.no-texte) {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation: fadeInOpacity 1s linear forwards;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+/*Fade in - opacity - bottom*//*# sourceMappingURL=theme.css.map */
