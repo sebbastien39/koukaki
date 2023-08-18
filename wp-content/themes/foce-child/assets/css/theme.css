@@ -1,5 +1,5 @@
 .banner-picture {
-  z-index: 0;
+  position: absolute;
 }
 
 .banner video {
@@ -13,7 +13,7 @@
   }
 }
 .banner-logo {
-  z-index: 2;
+  position: absolute;
 }
 
 /*Rotation sunflower, hibiscus*/
