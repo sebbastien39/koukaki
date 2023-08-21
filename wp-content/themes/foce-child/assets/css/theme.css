@@ -4,7 +4,7 @@
 
 .banner video {
   -o-object-fit: inherit;
-     object-fit: inherit;
+  object-fit: inherit;
 }
 
 @media (max-width: 1400px) {
@@ -25,6 +25,7 @@
 .storyh2::after {
   transform-origin: 77px 77px;
 }
+
 .storyh2::before {
   transform-origin: 102px 111px;
 }
@@ -95,4 +96,4 @@
     transform: translate(0px, 0px);
   }
 }
-/*Fade in - opacity - bottom*//*# sourceMappingURL=theme.css.map */
+/*Fade in - opacity - bottom*/ /*# sourceMappingURL=theme.css.map */

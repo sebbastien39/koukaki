@@ -7,11 +7,11 @@ get_header();
         <section class="banner">           
         <video autoplay loop muted
             src=<?php echo get_stylesheet_directory_uri(). '/assets/videos/Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?> 
-            poster=<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            poster=<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>  alt="logo Fleurs d'oranger & chats errants">
         </video>
             <img class="banner-logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
-        <section id="#story" class="story">            
+        <section id="story" class="story">            
             <h2>L'histoire</h2>
             <article class="story__article">
                 <p class="no-texte"><?php echo get_theme_mod('story'); ?></p>
@@ -29,6 +29,8 @@ get_header();
             <article id="characters">
                 <div class="main-character">
                     <h3>Les personnages</h3>
+                    <!-- Enlever ce code ??-->
+                    <?php get_template_part( 'templates/personnages','festival' ); ?>
                     <?php
                     $main_character = $characters_query->posts[0];
                     echo '<figure>';
@@ -56,6 +58,8 @@ get_header();
                 <div>
                     <h3>Le Lieu</h3>
                     <p class="no-texte"><?php echo get_theme_mod('place'); ?></p>
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+                    <img class="banner-logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?> " alt="cloud">
                 </div>
 
             </article>
@@ -69,7 +73,6 @@ get_header();
                 <p class="no-texte">Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
             </div>
         </section>
-        <?php get_template_part( 'templates/nomination','festival' ); ?>
     </main><!-- #main -->
 
 <?php

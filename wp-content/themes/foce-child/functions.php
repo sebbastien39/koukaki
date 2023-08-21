@@ -4,7 +4,11 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     // Chargement feuille de style du thème enfant "foce-child"
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/assets/css/theme.scss', array(), filemtime(get_stylesheet_directory() . '/assets/css/theme.scss'));
+    wp_enqueue_style('swiper-style', "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" , array());
+
     wp_enqueue_script('theme-js', get_stylesheet_directory_uri() . '/assets/js/script.js', array(),time(), true);
+    wp_enqueue_script('swiper-js', "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" , array(), null, true);
+
 }
 
 // Get customizer options form parent theme
