@@ -1,72 +1,83 @@
+/*banner - image - video*/
+const observerBanner = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const logoBanner = entry.target.querySelector('.banner-logo')
+    const videoBanner = entry.target.querySelector('.banner video')
+    if (entry.isIntersecting) {
+      logoBanner.classList.add('animation')
+      videoBanner.classList.add('animation-video')
+      return; // if we added the class, exit the function
+    }
+    // We're not intersecting, so remove the class!
+    logoBanner.classList.remove('animation')
+    videoBanner.classList.remove('animation-video')
+  });
+});
 
-// $("p:not('.no-texte')")
+observerBanner.observe(document.querySelector('.banner')); //Banner image - video
 
-//$(document).ready(function(){
-  //Anime plusieurs propriétés en même te
-//      $(".banner-logo").animate({
-//        opacity: 0;
-//        transform: translate(0px, 0px);
-//      });
-//});
-//}
+/*section L'histoire*/
+const observerHistoire = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const chatGauche = entry.target.classList.remove('story__article:not(p)')
+    const chatG = entry.target.querySelector('story__article')
+    if (entry.isIntersecting) {
+      chatGauche.classList.add('animation')
+      chatG.classList.add('animation')
 
+      return;
+    }
+    chatGauche.classList.remove('animation')
+    chatG.classList.remove('animation')
+  });
+});
 
-//$('p').on( 'click', function () {
-//  alert("Quelqu'un a cliqué sur un paragraphe!")
-//});
+observerHistoire.observe(document.querySelector('.story')); //Lhistoire
 
+/*section Les personnages*/
+const observerPersonnages = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const chatGauche = entry.target.querySelector('.main-character')
+    const chatDroite = entry.target.querySelector('.other-characters')
+    if (entry.isIntersecting) {
+      chatGauche.classList.add('animation')
+      chatDroite.classList.add('animation')
+      return;
+    }
+    chatGauche.classList.remove('animation')
+    chatDroite.classList.remove('animation')   
+  });
+});
 
-// removeAttr() : supprime un attribut, RIP
-// .fadeIn()
+observerPersonnages.observe(document.querySelector('#characters')) //Personnages
 
+/*section Le lieu*/
+const observerLieu = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const lieu = entry.target.querySelector('.container-lieu')
+    console.log(entry)
+    if (entry.isIntersecting) {
+      lieu.classList.add('animation')
+      return;
+    }
+    lieu.classList.remove('animation')   
+  });
+});
 
+observerLieu.observe(document.querySelector('#place')) //Lieu
 
-//let storyFadeIn = document.getElementById(".story");
-//storyFadeIn.classList.remove("p")
-//storyFadeIn.remove(p)
+/*section Studio Koukaki*/
+const observerStudiKoukaki = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const studio = entry.target.querySelector('h2')
+ 
+    if (entry.isIntersecting) {
+      studio.classList.add('animation')
+      return; // if we added the class, exit the function
+    }
+    // We're not intersecting, so remove the class!
+    studio.classList.remove('animation')   
+  });
+});
 
-
-
-//window.addEventListener('scroll',(event) => {
-//    console.log('Scrolling...');
-//});
-
-const story = document.querySelector(".story")
-
-story.addEventListener("click", () => {
-    console.log("Vous avez cliqué sur le bouton")
-    
-})
-
-//onst observer = new IntersectionObserver(entries => {
-//   entries.forEach(entry => {
-//     const square = entry.target.querySelector('.story');
-// 
-//     if (entry.isIntersecting) {
-//       square.classList.add('story');
-//       return; // if we added the class, exit the function
-//     }
-// 
-//     // We're not intersecting, so remove the class!
-//     square.classList.remove('story');
-//   });
-// });
-// 
-// observer.observe(document.querySelector('.site.main'));
-
-
-  //const observer = new IntersectionObserver(entries => {
-  //  entries.forEach(entry => {
-  //    const square = entry.target.querySelector('.square');
-  //
-  //    if (entry.isIntersecting) {
-  //      square.classList.add('square-animation');
-  //      return; // if we added the class, exit the function
-  //    }
-  //
-  //    // We're not intersecting, so remove the class!
-  //    square.classList.remove('square-animation');
-  //  });
-  //});
-  //
-  //observer.observe(document.querySelector('.square-wrapper'));
+observerStudiKoukaki.observe(document.querySelector('#studio')) //StudioKoukaki

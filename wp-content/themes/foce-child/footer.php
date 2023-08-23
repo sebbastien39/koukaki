@@ -12,8 +12,7 @@
 ?>   
 
 	<footer id="colophon" class="site-footer">
-    <?php get_template_part( 'templates/nomination','festival' ); ?>        
-
+        <?php get_template_part( 'templates/nomination','festival' ); ?>        
         <ul>
             <li><a href="#">Mentions Légales</a></li>
             <li><a href="#">STUDIO KOUKAKI</a></li>
