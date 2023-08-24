@@ -7,19 +7,19 @@
 .banner-picture {
     position: absolute;
   }
-  
+ 
+.banner video {
+    object-fit: inherit;
+  }
+
+@media (max-width: 1400px) {
   .banner video {
-       object-fit: inherit;
+    display: none;
   }
-  
-  @media (max-width: 1400px) {
-    .banner video {
-      display: none;
-    }
-  }
-  .banner-logo {
-    position: absolute;
-  }
+}
+.banner-logo {
+  position: absolute;
+}
   
 /*Rotation fleurs*/
 .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after {
@@ -95,83 +95,14 @@
 
 .container-oscars-background {
   background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png");
-  //filter: blur(10px);
-  //background-size: 700px 200px;
-  //padding: 20px;
   background-repeat: no-repeat;
   background-size: 728px 215px;
   background-position: center;
   text-align: center;
-  //padding: 1em 2em;
 }
 
 .container-oscars img {
   width: 278px;
   height: 129px;
   flex-shrink: 0;
-
 }
-
-/*Fade in - opacity - top*/
-//.story, #studio, #colophon, .banner img, .container-oscars, p:not(.no-texte) 
-.active {
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
-  animation: fadeInOpacity 1s linear forwards;
-}
-
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-/*Fade in - opacity - vers le bas - banner video*/
-.animation-video {
-  opacity: 1;
-  animation-name: fadeInOpacityVideo;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
-  animation: fadeInOpacityVideo 1s linear forwards;
-}
-
-@keyframes fadeInOpacityVideo {
-  0% {
-    opacity: 0;
-    transform: translate(0px, -300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-
-
-/*fadeInOpacity - vers le haut*/
-@media (prefers-reduced-motion: no-preference) {
-  .animation {
-    animation: fadeInOpacity 1s 1;
-  }
-}
-
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-
-/*# sourceMappingURL=theme.css.map */
-

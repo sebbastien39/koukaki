@@ -11,7 +11,7 @@
 
 ?>   
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer animation">
         <?php get_template_part( 'templates/nomination','festival' ); ?>        
         <ul>
             <li><a href="#">Mentions Légales</a></li>
