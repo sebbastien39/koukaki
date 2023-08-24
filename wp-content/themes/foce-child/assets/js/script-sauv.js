@@ -81,3 +81,67 @@ const observerStudiKoukaki = new IntersectionObserver(entries => {
 });
 
 observerStudiKoukaki.observe(document.querySelector('#studio')) //StudioKoukaki
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++Sauvegarde scrip.je 24/08/23==================*/
+
+/*banner - image - video*/
+const observerBanner = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const logoBanner = entry.target.querySelector('.banner-logo')
+      const videoBanner = entry.target.querySelector('.banner video')
+      if (entry.isIntersecting) {
+        logoBanner.classList.add('animation')
+        videoBanner.classList.add('animation-video')
+        return; // if we added the class, exit the function
+      }
+      // We're not intersecting, so remove the class!
+      logoBanner.classList.remove('animation')
+      videoBanner.classList.remove('animation-video')
+    });
+  });
+  
+observerBanner.observe(document.querySelector('.banner')); //Banner image - video
+
+/*============================================================================================*/
+
+
+
+const the_animation = document.querySelectorAll('.animation')
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animation')
+        }
+            else {
+                entry.target.classList.remove('animation')
+            }
+        
+    })
+},
+   { threshold: 0.5
+   });
+//
+  for (let i = 0; i < the_animation.length; i++) {
+   const elements = the_animation[i];
+
+    observer.observe(elements);
+  }

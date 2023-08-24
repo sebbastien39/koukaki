@@ -56,8 +56,6 @@
   align-items: center;
   justify-content: center;
   padding-top: 0px;
-  
-
 }
 
 .site-footer::after {
@@ -68,16 +66,6 @@
   align-items: center;
   padding-top: 20px;
   padding-bottom: 200px;
-
-  //width: 66.66%;
-  //margin: auto;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
-}
-
-//.box-oscars {
-
 }
 
 .container-oscars p {
@@ -105,4 +93,57 @@
   width: 278px;
   height: 129px;
   flex-shrink: 0;
+}
+
+/*fadeInOpacity - vers le haut - Banner image logo - Fleurs d'oranger et chats errants*/
+@media (prefers-reduced-motion: no-preference) {
+  .animation {
+    animation: fadeInOpacity 1s 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+/*fadeInOpacity - vers le bas - Banner video=======================================*/
+.animation-video {
+  opacity: 1;
+  animation-name: fadeInOpacityVideo;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation: fadeInOpacityVideo 1s linear forwards;
+}
+
+@keyframes fadeInOpacityVideo {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+
+/*==============================================================================*/
+.animation2 {
+  opacity: 0;
+  transform: translate(0px, 300px);
+  transition: all 0.3s ease-out;
+  transition-delay: 0s;
+}
+
+.scroll-animation {
+  opacity: 1;
+  transform: translate(0px, 0px);
 }

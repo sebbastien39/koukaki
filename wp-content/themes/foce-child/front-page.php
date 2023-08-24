@@ -5,13 +5,13 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">           
-            <video autoplay loop muted
+            <video class="" autoplay loop muted
                 src=<?php echo get_stylesheet_directory_uri(). '/assets/videos/Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?> 
                 poster=<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>  alt="logo Fleurs d'oranger & chats errants">
             </video>
             <img class="banner-logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
-        <section id="story" class="story">            
+        <section id="story" class="story animation">            
             <h2>L'histoire</h2>
             <article class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
@@ -52,8 +52,8 @@ get_header();
                     ?>
                 </div>
             </article>
-            <article id="place" class="animation">
-                <div class="container-lieu">
+            <article id="place">
+                <div>
                     <h3>Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>                    
                     <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="image petit nuage">
@@ -63,7 +63,7 @@ get_header();
         </section>
 
 
-        <section id="studio" class="animation">
+        <section id="studio">
             <h2>Studio Koukaki</h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
