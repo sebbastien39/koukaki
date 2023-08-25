@@ -1,3 +1,4 @@
+/*Banner image - video*/
 @media (min-width: 1400px) {
   .banner {
     background-image: none;
@@ -20,19 +21,31 @@
 .banner-logo {
   position: absolute;
 }
-  
+
+/*fadeIn-Banner video*/
+.animation-video {
+  //animation-name: fadeInOpacityVideo;
+  //animation-iteration-count: 1;
+  //animation-timing-function: ease-in;
+  //animation-duration: 2s;
+  animation: fadeInVideo 2s ease 0s forwards;
+  //animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+@keyframes fadeInVideo {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
 /*Rotation fleurs*/
 .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after {
   animation: rotation 15s infinite linear;
-}
-  
-/*axe sunflower*/
-.storyh2::after {
-  transform-origin: 77px 77px;
-}
-
-.storyh2::before {
-  transform-origin: 102px 111px;
 }
 
 @keyframes rotation {
@@ -43,9 +56,71 @@
     transform: rotate(360deg);
   }
 }
+
+/*axe sunflower*/
+.storyh2::after {
+  transform-origin: 77px 77px;
+}
+
+.storyh2::before {
+  transform-origin: 102px 111px;
+}
+
+/*==============================================================================*/
+/*Animation sections*/
+.animation {
+  opacity: 0;
+  transform: translate(0px, 300px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: 0.1s;
+}
+
+.scroll-animation {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+
+
+
+
 /*Image section Le lieu*/
 .story #place {
   background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+}
+
+/*Grand nuage - Petit nuage*/
+.petit-nuage {
+  position: absolute;
+  left: 793px;
+  top: 1536px;
+  filter: blur(11px);
+}
+
+.grand-nuage {
+  position: absolute;
+  left: 1031px;
+  top: 1360px;
+  filter: blur(11px);
+}
+
+.animation-nuages {
+  opacity: 1;
+  animation-name: anime-nuages;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation: anime-nuages 2s linear forwards;
+}
+
+@keyframes anime-nuages {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-480px);
+  }
 }
 
 /* Section Nomination festival - footer*/
@@ -95,55 +170,8 @@
   flex-shrink: 0;
 }
 
-/*fadeInOpacity - vers le haut - Banner image logo - Fleurs d'oranger et chats errants*/
-@media (prefers-reduced-motion: no-preference) {
-  .animation {
-    animation: fadeInOpacity 1s 1;
-  }
-}
-
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-
-/*fadeInOpacity - vers le bas - Banner video=======================================*/
-.animation-video {
-  opacity: 1;
-  animation-name: fadeInOpacityVideo;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
-  animation: fadeInOpacityVideo 1s linear forwards;
-}
-
-@keyframes fadeInOpacityVideo {
-  0% {
-    opacity: 0;
-    transform: translate(0px, -300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
 
 
-/*==============================================================================*/
-.animation2 {
-  opacity: 0;
-  transform: translate(0px, 300px);
-  transition: all 0.3s ease-out;
-  transition-delay: 0s;
-}
 
-.scroll-animation {
-  opacity: 1;
-  transform: translate(0px, 0px);
-}
+
+
