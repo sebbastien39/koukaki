@@ -20,14 +20,23 @@
 }
 .banner-logo {
   position: absolute;
+  //animation: flottement-logo 15s infinite linear;
+  //
+}
+
+/*Effet flottement logo banner*/
+
+@keyframes flottement-logo {
+  from {
+    transform-origin: 77px 80px;
+  }
+  to {
+    transform-origin: 80px 77px;
+  }
 }
 
 /*fadeIn-Banner video*/
 .animation-video {
-  //animation-name: fadeInOpacityVideo;
-  //animation-iteration-count: 1;
-  //animation-timing-function: ease-in;
-  //animation-duration: 2s;
   animation: fadeInVideo 2s ease 0s forwards;
   //animation: name duration timing-function delay iteration-count direction fill-mode;
 }
@@ -41,6 +50,11 @@
     opacity: 1;
     transform: translate(0px, 0px);
   }
+}
+
+/*axe sunflower*/
+.storyh2::after {
+  transform-origin: 77px 77px;
 }
 
 /*Rotation fleurs*/
@@ -66,7 +80,6 @@
   transform-origin: 102px 111px;
 }
 
-/*==============================================================================*/
 /*Animation sections*/
 .animation {
   opacity: 0;
@@ -80,36 +93,29 @@
   transform: translate(0px, 0px);
 }
 
-
-
-
 /*Image section Le lieu*/
 .story #place {
   background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
 }
 
-/*Grand nuage - Petit nuage*/
+/*Animation - Petit nuage - Grand nuage*/
 .petit-nuage {
   position: absolute;
-  left: 793px;
+  left: 493px;
   top: 1536px;
   filter: blur(11px);
 }
 
 .grand-nuage {
   position: absolute;
-  left: 1031px;
+  left: 730px;
   top: 1360px;
   filter: blur(11px);
 }
 
 .animation-nuages {
   opacity: 1;
-  animation-name: anime-nuages;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
-  animation: anime-nuages 2s linear forwards;
+  animation: anime-nuages 2s ease forwards;
 }
 
 @keyframes anime-nuages {
@@ -119,23 +125,11 @@
   }
   100% {
     opacity: 1;
-    transform: translateX(-480px);
+    transform: translateX(300px);
   }
 }
 
-/* Section Nomination festival - footer*/
-
-.site-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 0px;
-}
-
-.site-footer::after {
-  bottom: 26em;
-}
+/* Section Nomination festival*/
 .container-oscars {
   display: flex;  
   align-items: center;
@@ -168,10 +162,20 @@
   width: 278px;
   height: 129px;
   flex-shrink: 0;
+  position: absolute;
+  left: 1052px;
+  top: 64px;
 }
 
+ /*footer*/
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
+}
 
-
-
-
-
+.site-footer::after {
+  bottom: 26em;
+}

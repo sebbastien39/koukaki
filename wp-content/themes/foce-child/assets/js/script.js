@@ -24,22 +24,24 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('scroll-animation')
-            console.log(entry.isIntersecting)
         }
             else {
                 entry.target.classList.remove('scroll-animation')
-            }
-        
+            }        
     })
 },
-   { threshold: [0.2]
+   { threshold: 0.2
    });
 //
   for (let i = 0; i < the_animation.length; i++) {
    const elements = the_animation[i];
-
     observer.observe(elements);
   }
+
+// function removeElement() {
+//   let child = document.querySelector("p");
+//   child.remove();
+// }
 
 /*===================================================================================================================*/
 /*Animation nuages*/
@@ -58,6 +60,79 @@ const observerNuages = new IntersectionObserver(entries => {
 });
 
 observerNuages.observe(document.querySelector('#place')); //Animation nuages
+
+/*=============================================OK======================================*/
+
+
+
+//Swiper
+
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+const swiper = new Swiper('.swiper', {
+
+  // Optional parameters
+
+  loop: true,
+
+//   slidesPerView: 3,
+
+  slidesPerView: 'auto',
+
+//   initialSlide: 3,
+
+  centeredSlides: true,
+
+  effect: "coverflow",
+
+  coverflowEffect: {
+
+    rotate: 0,                      
+
+    depth: 200,                     
+
+    stretch: 60,                    
+
+    slideShadows: false,            
+
+},
+
+autoplay: isMobile ? false : {
+
+    delay: 5000,
+
+    disableOnInteraction: false,
+
+  },
+
+breakpoints:{
+
+    0: {
+
+        slidesPerView: 1,
+
+    },
+
+    320:{
+
+        slidesPerView: 2,
+
+    },
+
+    996:{
+
+        slidesPerView: 3,
+
+    }
+
+}
+
+});
+
+
+
+
+
 
 
 //
