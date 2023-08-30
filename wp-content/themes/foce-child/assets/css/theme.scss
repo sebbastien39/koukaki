@@ -1,65 +1,21 @@
-/*Banner image - video*/
-@media (min-width: 1400px) {
-  .banner {
-    background-image: none;
-  }
-}
-
-.banner-picture {
-    position: absolute;
-  }
- 
+/*Banner video image*/
 .banner video {
-    object-fit: inherit;
-  }
-
-@media (max-width: 1400px) {
-  .banner video {
-    display: none;
-  }
-}
-.banner-logo {
   position: absolute;
-  //animation: flottement-logo 15s infinite linear;
-  //
-}
-
-/*Effet flottement logo banner*/
-
-@keyframes flottement-logo {
-  from {
-    transform-origin: 77px 80px;
-  }
-  to {
-    transform-origin: 80px 77px;
-  }
-}
-
-/*fadeIn-Banner video*/
-.animation-video {
-  animation: fadeInVideo 2s ease 0s forwards;
-  //animation: name duration timing-function delay iteration-count direction fill-mode;
-}
-
-@keyframes fadeInVideo {
-  0% {
-    opacity: 0;
-    transform: translate(0px, -300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-
-/*axe sunflower*/
-.storyh2::after {
-  transform-origin: 77px 77px;
 }
 
 /*Rotation fleurs*/
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after {
-  animation: rotation 15s infinite linear;
+:root {
+  --speed: 3s; //varieble vitesse fleurs
+}
+
+.story h2::after, 
+.story__article::after, 
+#studio h2::before, 
+#studio h2::after, 
+.site-footer::before, 
+.site-footer::after, 
+.site-footer ul::after  {
+  animation: rotation var(--speed) infinite linear;
 }
 
 @keyframes rotation {
@@ -71,62 +27,97 @@
   }
 }
 
-/*axe sunflower*/
-.storyh2::after {
-  transform-origin: 77px 77px;
-}
+/*Centrage des fleurs*/
+.story h2::after { transform-origin: 77px 77px; }
+#studio h2::before {transform-origin: 102px 100px;} 
+#studio h2::after {transform-origin: 55px 55px;}
+.site-footer::before {transform-origin: 78px 77px;} 
+.site-footer::after {transform-origin: 87px 85px;}
+.site-footer ul::after  {transform-origin:323px 323px;}
 
-.storyh2::before {
-  transform-origin: 102px 111px;
-}
-
-/*Animation sections*/
-.animation {
+/*Effet fade-in des sections*/
+#story,
+#studio,
+footer {
   opacity: 0;
-  transform: translate(0px, 300px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  transition-delay: 0.1s;
+  animation: sections-fade-in 3s 0.5s forwards;
+}  
+
+@keyframes sections-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }   
 }
 
-.scroll-animation {
-  opacity: 1;
-  transform: translate(0px, 0px);
+/*Titres bleus*/
+h2 { 
+  overflow: hidden;
+}
+
+h2 span {
+  transform: translateY(100%);
+  display:inline-block;
+}
+
+.title-animation {
+  animation: title-animation 1s ease-in-out forwards;
+}
+
+.title-animation:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.title-animation:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.title-animation:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes title-animation {
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/*Personnages*/
+.swiper {
+  width: 750px;
+}
+
+.characters-swiper {
+  text-align: center;
+  h3 {
+    z-index: 2;
+    background-image: url('../images/orange_characters_bg.png');
+  }
 }
 
 /*Image section Le lieu*/
 .story #place {
-  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  position: relative;
 }
 
 /*Animation - Petit nuage - Grand nuage*/
 .petit-nuage {
   position: absolute;
-  left: 493px;
-  top: 1536px;
+  left: 500px;
+  top: 250px;
   filter: blur(11px);
 }
 
 .grand-nuage {
   position: absolute;
-  left: 730px;
-  top: 1360px;
+  left: 600px;
+  top: 150px;
   filter: blur(11px);
-}
-
-.animation-nuages {
-  opacity: 1;
-  animation: anime-nuages 2s ease forwards;
-}
-
-@keyframes anime-nuages {
-  0% {
-    opacity: 0;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(300px);
-  }
 }
 
 /* Section Nomination festival*/
@@ -151,7 +142,7 @@
 }
 
 .container-oscars-background {
-  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png");
+  background-image: url("../images/Rectangle 23.png");
   background-repeat: no-repeat;
   background-size: 728px 215px;
   background-position: center;
@@ -179,3 +170,4 @@
 .site-footer::after {
   bottom: 26em;
 }
+

@@ -1,0 +1,99 @@
+.banner-picture {
+  position: absolute;
+}
+
+.banner video {
+  -o-object-fit: inherit;
+  object-fit: inherit;
+}
+
+@media (max-width: 1400px) {
+  .banner video {
+    display: none;
+  }
+}
+.banner-logo {
+  position: absolute;
+}
+
+/*Rotation sunflower, hibiscus*/
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after {
+  animation: rotation 15s infinite linear;
+}
+
+/*axe sunflower*/
+.storyh2::after {
+  transform-origin: 77px 77px;
+}
+
+.storyh2::before {
+  transform-origin: 102px 111px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*Image section Le lieu*/
+.story #place {
+  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+}
+
+/* Section Nomination festival */
+.container-oscars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 66.66%;
+  margin: auto;
+}
+
+.container-oscars p {
+  color: #FFF5E9;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Quicksand;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.84px;
+  width: 643px;
+  height: 187px;
+}
+
+.container-oscars-background {
+  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png");
+  background-size: 700px 200px;
+}
+
+.container-oscars img {
+  width: 278px;
+  height: 129px;
+  flex-shrink: 0;
+}
+
+/*Fade in - opacity - top*/
+.story, #studio, #colophon, .banner img, .container-oscars, #story:not(.no-texte) {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation: fadeInOpacity 1s linear forwards;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+/*Fade in - opacity - bottom*/ /*# sourceMappingURL=theme.css.map */
