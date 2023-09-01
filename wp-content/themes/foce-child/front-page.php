@@ -4,12 +4,14 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-        <section class="banner" class="animation-video">           
-            <video autoplay loop muted playsinline preload="none"
-                src=<?php echo get_stylesheet_directory_uri(). '/assets/videos/Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?> 
-                poster=<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>  alt="logo Fleurs d'oranger & chats errants">
-            </video>
-            <img class="banner-logo animation" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+        <section class="banner" class="animation-video">
+            <div class="container-video">          
+                <video autoplay loop muted playsinline preload="none"
+                    src=<?php echo get_stylesheet_directory_uri(). '/assets/videos/Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?> 
+                    poster=<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>  alt="logo Fleurs d'oranger & chats errants">
+                </video>
+            </div>
+            <img class="banner-logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
         <section id="story" class="story">            
             <h2><span>L'</span><span>hist</span><span>oire</span></h2>

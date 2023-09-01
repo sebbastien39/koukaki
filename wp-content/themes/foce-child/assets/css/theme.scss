@@ -1,6 +1,83 @@
-/*Banner video image*/
-.banner video {
+
+
+
+/*Animation banner - vers le bas*/
+.container-video {
   position: absolute;
+}
+
+.container-video video {
+  display: contents;
+}
+
+.banner {
+  animation: fadeInVideo 2s ease-out 0s forwards;
+}
+
+@keyframes fadeInVideo {
+  0% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  40% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+/*Animation logo*/
+.banner-logo {
+  position: sticky;
+  top: 10px;
+  opacity: 1;
+  animation: debut-logo 1.5s 0.5s ease-out;
+  animation: anim-logo 5s 2.5s infinite ease-in-out;
+}
+
+@keyframes debut-logo {
+  0% {
+      opacity: 0;
+      transform: translateY(70%);
+  }
+  40% {
+      opacity: 1;
+      transform: translateY(70%);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes anim-logo {
+  0% {
+      transform: translate(0,0);
+  }
+  10% {
+      transform: translateX(5px);
+  }
+  20% {
+      transform: translateX(-10px);
+  }
+  40% {
+      transform: translateY(15px);
+  }
+  55% {
+      transform: translateY(-10px);
+  }
+  70% {
+      transform: translate(10px,10px);
+  }
+  85% {
+      transform: translate(-5px,-10px);
+  }
+  100% {
+      transform: translate(0,0);
+  }
 }
 
 /*Rotation fleurs*/
@@ -46,7 +123,7 @@ footer {
 @keyframes sections-fade-in {
   0% {
     opacity: 0;
-    transform: translateY(200px);
+    transform: translateY(150px);
   }
   100% {
     opacity: 1;

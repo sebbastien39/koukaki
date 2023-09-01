@@ -47,11 +47,6 @@ spans.forEach(span=>{
   observerTitle.observe(span);
 });
 
-
-
-
-
-
 /*Swiper personnages*/
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const swiper = new Swiper('.swiper', {
@@ -97,4 +92,13 @@ document.addEventListener('scroll', () => {
    }
 
    console.log(scrollPercentage);
+})
+
+/*Menu Fullscreen*/
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.fullscreen-menu');
+
+menuBtn.addEventListener('click', event => {
+    event.target.classList.toggle('active');
+    menu.classList.toggle('open');
 })
