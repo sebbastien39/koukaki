@@ -1,4 +1,4 @@
-<article class="characters-swiper" id="newcharacters">
+<article class="characters-swiper" id="characters">
 <h3>Les personnages</h3>
 <?php
             $args = array(

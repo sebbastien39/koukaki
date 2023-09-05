@@ -1,33 +1,227 @@
-.banner-picture {
+@charset "UTF-8";
+/*Menu*/
+#navigation-menu {
+  display: flex;
+  justify-content: center;
+  background-color: #FFD5A2;
+  min-height: 80px;
+  align-items: center;
+}
+#navigation-menu button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  background-color: transparent;
+}
+#navigation-menu .line {
+  height: 3px;
+  background-color: #000;
+  display: block;
+  margin: auto;
+  margin-block: 2px;
+  width: 20px;
+}
+
+.fullscreen-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  top: 80px;
+  transition: opacity 0.5s ease-in-out;
+  background-color: #FFF5E9;
+  width: 100%;
+  min-height: 50vw;
+}
+.fullscreen-menu img {
+  width: 154px;
+}
+
+.fullscreen-menu li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.fullscreen-menu a {
+  text-decoration: none;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.menu-btn::after {
+  content: "☰";
+}
+
+.menu-btn.active::after {
+  content: "✖";
+}
+
+.open {
+  opacity: 1;
+}
+
+/*Images menu fullscreen*/
+#menu-image-sunflower {
+  position: absolute;
+  top: 80px;
+  left: 1100px;
+  height: 216px;
+  width: 216px;
+}
+
+#menu-image-orchid {
+  position: absolute;
+  top: 50px;
+  left: -50px;
+  width: 172px;
+  height: 168px;
+}
+
+#menu-image-hibiscus {
+  position: absolute;
+  top: 640px;
+  left: 1122px;
+  width: 626px;
+  height: 626px;
+}
+
+#menu-image-random-flower {
+  position: absolute;
+  top: 390px;
+  left: 1396px;
+  width: 75px;
+  height: 75px;
+}
+
+#menu-image-flower {
+  position: absolute;
+  top: 483px;
+  left: 213px;
+  width: 70px;
+  height: 70px;
+}
+
+#menu-image-sunflower, #menu-image-orchid, #menu-image-hibiscus, #menu-image-random-flower, #menu-image-flower {
+  animation: rotation 2s infinite linear;
+}
+
+#menu-image-cat-grey {
+  position: absolute;
+  top: 472px;
+  left: 1076px;
+  width: 123px;
+  height: 111px;
+}
+
+#menu-image-cat-blue {
+  position: absolute;
+  top: 275px;
+  left: 267px;
+  width: 109px;
+  height: 98px;
+}
+
+#menu-image-cat-yellow {
+  position: absolute;
+  top: 727px;
+  left: 79px;
+  width: 105px;
+  height: 95px;
+}
+
+#menu-image-cat-grey, #menu-image-cat-blue, #menu-image-cat-yellow {
+  animation: anim-logo 5s 2.5s infinite ease-in-out;
+}
+
+/*Animation banner - vers le bas*/
+.container-video {
   position: absolute;
 }
 
-.banner video {
-  -o-object-fit: inherit;
-  object-fit: inherit;
+.container-video video {
+  display: contents;
 }
 
-@media (max-width: 1400px) {
-  .banner video {
-    display: none;
+.banner {
+  animation: fadeInVideo 2s ease-out 0s forwards;
+}
+
+@keyframes fadeInVideo {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
+/*Animation logo*/
 .banner-logo {
-  position: absolute;
+  position: sticky;
+  top: 10px;
+  opacity: 1;
+  animation: debut-logo 1.5s 0.5s ease-out;
+  animation: anim-logo 5s 2.5s infinite ease-in-out;
 }
 
-/*Rotation sunflower, hibiscus*/
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after {
-  animation: rotation 15s infinite linear;
+@keyframes debut-logo {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(70);
+  }
+}
+@keyframes anim-logo {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translateX(5px);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateY(15px);
+  }
+  55% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translate(10px, 10px);
+  }
+  85% {
+    transform: translate(-5px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/*Rotation fleurs*/
+:root {
+  --speed: 3s;
+  --offset: 0px;
 }
 
-/*axe sunflower*/
-.storyh2::after {
-  transform-origin: 77px 77px;
-}
-
-.storyh2::before {
-  transform-origin: 102px 111px;
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+  animation: rotation var(--speed) infinite linear;
 }
 
 @keyframes rotation {
@@ -38,18 +232,120 @@
     transform: rotate(360deg);
   }
 }
-/*Image section Le lieu*/
-.story #place {
-  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+/*Centrage des fleurs*/
+.story h2::after {
+  transform-origin: 77px 77px;
 }
 
-/* Section Nomination festival */
+#studio h2::before {
+  transform-origin: 102px 100px;
+}
+
+#studio h2::after {
+  transform-origin: 55px 55px;
+}
+
+.site-footer::before {
+  transform-origin: 78px 77px;
+}
+
+.site-footer::after {
+  transform-origin: 87px 85px;
+}
+
+.site-footer ul::after {
+  transform-origin: 323px 323px;
+}
+
+/*Effet fade-in des sections*/
+#story,
+#studio,
+footer {
+  opacity: 0;
+  animation: sections-fade-in 3s 0.5s forwards;
+}
+
+@keyframes sections-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/*Titres bleus*/
+h2 {
+  overflow: hidden;
+}
+
+h2 span {
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+.title-animation {
+  animation: title-animation 1s ease-in-out forwards;
+}
+
+.title-animation:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.title-animation:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.title-animation:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes title-animation {
+  100% {
+    transform: translateY(0%);
+  }
+}
+/*Personnages*/
+.swiper {
+  width: 750px;
+}
+
+.characters-swiper {
+  text-align: center;
+}
+.characters-swiper h3 {
+  z-index: 2;
+  background-image: url("../images/orange_characters_bg.png");
+}
+
+/*Image section Le lieu*/
+.story #place {
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  position: relative;
+}
+
+/*Animation - Petit nuage - Grand nuage*/
+.petit-nuage {
+  position: absolute;
+  left: 500px;
+  top: 250px;
+  filter: blur(11px);
+}
+
+.grand-nuage {
+  position: absolute;
+  left: 600px;
+  top: 150px;
+  filter: blur(11px);
+}
+
+/* Section Nomination festival*/
 .container-oscars {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  width: 66.66%;
-  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 200px;
 }
 
 .container-oscars p {
@@ -61,39 +357,36 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.84px;
-  width: 643px;
+  width: 700px;
   height: 187px;
 }
 
 .container-oscars-background {
-  background-image: url("http://localhost/koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png");
-  background-size: 700px 200px;
+  background-image: url("../images/Rectangle 23.png");
+  background-repeat: no-repeat;
+  background-size: 728px 215px;
+  background-position: center;
+  text-align: center;
 }
 
 .container-oscars img {
   width: 278px;
   height: 129px;
   flex-shrink: 0;
+  position: absolute;
+  left: 1052px;
+  top: 64px;
 }
 
-/*Fade in - opacity - top*/
-.story, #studio, #colophon, .banner img, .container-oscars, #story:not(.no-texte) {
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
-  animation: fadeInOpacity 1s linear forwards;
+/*footer*/
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
 }
 
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-/*Fade in - opacity - bottom*/ /*# sourceMappingURL=theme.css.map */
+.site-footer::after {
+  bottom: 26em;
+}/*# sourceMappingURL=theme.css.map */

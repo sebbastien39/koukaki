@@ -1,5 +1,145 @@
+/*Menu*/
+#navigation-menu {
+  display: flex;
+  justify-content: center;
+  background-color: #FFD5A2;
+  min-height: 80px;
+  align-items: center;
+  //width: 100%;
+  button {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border: 0;
+      background-color: transparent;
+  }
+  .line {
+      height: 3px;
+      background-color: #000;
+      display: block;
+      margin: auto;
+      margin-block: 2px;
+      width: 20px;
+  }
+}
+
+.fullscreen-menu {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity:0;
+  position: absolute;
+  top: 80px;
+  transition: opacity 0.5s ease-in-out;
+  background-color: #FFF5E9;
+  width: 100%;
+  min-height: 50vw;
 
 
+  img {
+    width:154px;
+  }
+}
+
+.fullscreen-menu li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.fullscreen-menu a {
+  text-decoration: none;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.menu-btn::after {
+  content: '\002630';
+  
+}
+
+.menu-btn.active::after {
+  content: '\002716';
+}
+
+.open {
+  opacity: 1;
+}
+
+/*Images menu fullscreen*/
+#menu-image-sunflower {
+  position: absolute;
+  top: 80px;
+  left: 1100px;
+  height: 216px;
+  width: 216px;
+}
+
+#menu-image-orchid {
+  position: absolute;
+  top: 50px;
+  left: -50px;
+  width: 172px;
+  height: 168px;
+}
+
+#menu-image-hibiscus {
+  position: absolute;
+  top: 640px;
+  left: 1122px;
+  width: 626px;
+  height: 626px;
+}
+
+#menu-image-random-flower {
+  position: absolute;
+  top: 390px;
+  left: 1396px;
+  width: 75px;
+  height: 75px;
+}
+
+#menu-image-flower {
+  position: absolute;
+  top: 483px;
+  left: 213px;
+  width: 70px;
+  height: 70px;
+}
+
+#menu-image-sunflower, #menu-image-orchid, #menu-image-hibiscus, #menu-image-random-flower, #menu-image-flower  {
+  animation: rotation 2s infinite linear;
+}
+
+#menu-image-cat-grey {
+  position: absolute;
+  top: 472px;
+  left: 1076px;
+  width: 123px;
+  height: 111px;
+}
+
+#menu-image-cat-blue {
+  position: absolute;
+  top: 275px;
+  left: 267px;
+  width: 109px;
+  height: 98px;
+}
+
+#menu-image-cat-yellow {
+  position: absolute;
+  top: 727px;
+  left: 79px;
+  width: 105px;
+  height: 95px;
+}
+
+#menu-image-cat-grey, #menu-image-cat-blue, #menu-image-cat-yellow {
+  animation: anim-logo 5s 2.5s infinite ease-in-out;
+ }
 
 /*Animation banner - vers le bas*/
 .container-video {
@@ -42,14 +182,10 @@
       opacity: 0;
       transform: translateY(70%);
   }
-  40% {
-      opacity: 1;
-      transform: translateY(70%);
-  }
 
   100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(70);
   }
 }
 
@@ -83,6 +219,7 @@
 /*Rotation fleurs*/
 :root {
   --speed: 3s; //varieble vitesse fleurs
+  --offset: 0px;
 }
 
 .story h2::after, 
@@ -247,4 +384,3 @@ h2 span {
 .site-footer::after {
   bottom: 26em;
 }
-
