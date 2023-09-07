@@ -1,23 +1,7 @@
-/*banner - image - video*/
-const observerBanner = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const logoBanner = entry.target.querySelector('.banner-logo')
-    const videoBanner = entry.target.querySelector('.banner video')
-    if (entry.isIntersecting) {
-      logoBanner.classList.add('animation')
-      videoBanner.classList.add('animation-video')
-      return; // if we added the class, exit the function
-    }
-    // We're not intersecting, so remove the class!
-    logoBanner.classList.remove('animation')
-    videoBanner.classList.remove('animation-video')
-  });
-});
-
 /*Accélération fleurs au scroll*/
-let root = document.querySelector(':root');
+let root = document.querySelector(':root'); //récupère l'élément
 
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', () => {//écouteur d'événement
     root.style.setProperty('--speed', '0.5s');
 });
 
@@ -26,7 +10,6 @@ document.addEventListener('scrollend', () => {
 });
 
 /*Titres bleus*/
-
 const observerTitle = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
       if(entry.isIntersecting) {
@@ -91,7 +74,7 @@ document.addEventListener('scroll', () => {
 
    }
 
-   console.log(scrollPercentage);
+   //console.log(scrollPercentage);
 })
 
 /*Menu Fullscreen*/
@@ -101,4 +84,12 @@ const menu = document.querySelector('.fullscreen-menu');
 menuBtn.addEventListener('click', event => {
     event.target.classList.toggle('active');
     menu.classList.toggle('open');
+})
+
+/* Fermeture menu au clic sur un lien */
+const menuLinks = document.querySelectorAll('.fullscreen-menu a');
+menuLinks.forEach(link => {
+link.addEventListener('click', function(event) {
+menu.classList.toggle('open');
+})
 })

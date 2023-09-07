@@ -5,7 +5,7 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner" class="animation-video">
-            <div class="container-video">          
+            <div class="container-video">
                 <video autoplay loop muted playsinline preload="none"
                     src=<?php echo get_stylesheet_directory_uri(). '/assets/videos/Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?> 
                     poster=<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>  alt="logo Fleurs d'oranger & chats errants">
